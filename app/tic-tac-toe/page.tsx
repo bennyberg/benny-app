@@ -1,7 +1,17 @@
+'use client'; // prevents problem with calling function with onClick
+
 import styles from "./page.module.css";
 
 function Square({ value }: { value: number | string }) {
-  return <button className={styles.square}>{value}</button>;
+  function handleClick() {
+    console.log("clicked!");
+  }
+
+  return (
+    <button className={styles.square} onClick={handleClick}>
+      {value}
+    </button>
+  );
 }
 
 export default function Board() {
