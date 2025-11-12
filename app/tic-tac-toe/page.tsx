@@ -1,10 +1,14 @@
-'use client'; // prevents problem with calling function with onClick
+"use client"; // prevents problem with calling function with onClick
+
+import { useState } from "react";
 
 import styles from "./page.module.css";
 
-function Square({ value }: { value: number | string }) {
+function Square() {
+  const [value, setValue] = useState<string | null>(null);
+
   function handleClick() {
-    console.log("clicked!");
+    setValue('X');
   }
 
   return (
@@ -18,19 +22,19 @@ export default function Board() {
   return (
     <>
       <div className={styles["board-row"]}>
-        <Square value="1" />
-        <Square value="2" />
-        <Square value="3" />
+        <Square />
+        <Square />
+        <Square />
       </div>
       <div className={styles["board-row"]}>
-        <Square value="4" />
-        <Square value="5" />
-        <Square value="6" />
+        <Square />
+        <Square />
+        <Square />
       </div>
       <div className={styles["board-row"]}>
-        <Square value="7" />
-        <Square value="8" />
-        <Square value="9" />
+        <Square />
+        <Square />
+        <Square />
       </div>
     </>
   );
