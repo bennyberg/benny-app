@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { redirect } from "next/navigation";
 export default function Home() {
-  redirect("/tic-tac-toe");
+  redirect("/art");
 }
 
 // export default function Home() {
