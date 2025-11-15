@@ -1,3 +1,64 @@
-.hey {
+.appHeader {
   font-size: 3rem;
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+}
+
+.artItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 2px solid black; /* Sets width to 2px, style to solid, and color to black */
+  width: 35rem;
+  gap: 1rem;
+}
+
+.textSection {
+  margin-left: 1rem;
+  width: 20rem
+}
+
+.imageSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  border: 2px solid black; /* Sets width to 2px, style to solid, and color to black */
+}
+
+.thumbnailImage {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.descriptor {
+  font-weight: bold;
+}
+
+.imageAltText{
+  text-decoration: none;
+  color: gray;
+}
+
+.artItemsContainer{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80rem;
+  margin: 1rem auto;  
+  gap: 1rem;
+}
+
+.departmentHeader{
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+
+
 }

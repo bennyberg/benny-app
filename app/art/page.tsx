@@ -1,13 +1,5 @@
-// "use client";
-
-import {
-  JSXElementConstructor,
-  PromiseLikeOfReactNode,
-  ReactElement,
-  ReactNode,
-  useEffect,
-} from "react";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 function getRandomSample<T>(arr: T[], count: number): T[] {
   const copy = [...arr]; // don't mutate original
@@ -59,25 +51,92 @@ async function getArtData(departmentId: string, count: number) {
 
 function ArtItem(props: any) {
   return (
-    <div className="artItem">
-      {props.name} {props.artistName} {props.image}
+    <div className={styles.artItem}>
+      <div className={styles.textSection}>
+        {props.name && (
+          <p>
+            <span className={styles.descriptor}>Title: </span>
+            {props.name}
+          </p>
+        )}
+        {props.artistName && (
+          <p>
+            {" "}
+            <span className={styles.descriptor}>Artist: </span>
+            {props.artistName}
+            {(props.artistBegin || props.artistEnd) && (
+              <>
+                {" ("}
+                {props.artistEnd === "" ? "?" : props.artistBegin ?? "?"}-
+                {props.artistEnd === "9999"
+                  ? "present"
+                  : props.artistEnd ?? "?"}
+                {")"}
+              </>
+            )}
+          </p>
+        )}{" "}
+        {props.date && (
+          <p>
+            <span className={styles.descriptor}>Date: </span>
+            {props.date}
+          </p>
+        )}
+        {props.country && (
+          <p>
+            <span className={styles.descriptor}>Country: </span>
+            {props.country}
+          </p>
+        )}
+        {props.culture && (
+          <p>
+            <span className={styles.descriptor}>Culture: </span>
+            {props.culture}
+          </p>
+        )}
+      </div>
+      <div className={styles.imageSection}>
+        <Link className={styles.imageAltText} href={props.url}>
+          <img
+            className={styles.thumbnailImage}
+            src={props.image}
+            alt="No image available"
+          />
+        </Link>
+      </div>
     </div>
   );
 }
 
 export default async function ArtApp() {
-  const artData = await getArtData("1", 2);
-  var artItems: any | null = [];
+  const artData = await getArtData("5", 10);
+  let artItems: any | null = [];
+  let departmentName = "";
+
   if (artData) {
+    departmentName = artData[0].department;
+
     artItems = artData.map((artItem) => (
-      <ArtItem key={artItem.objectID} name={artItem.title} artistName={artItem.artistDisplayName} image = {artItem.primaryImage} />
+      <ArtItem
+        key={artItem.objectID}
+        name={artItem.title}
+        artistName={artItem.artistDisplayName}
+        image={artItem.primaryImageSmall}
+        date={artItem.objectDate}
+        artistBegin={artItem.artistBeginDate}
+        artistEnd={artItem.artistEndDate}
+        url={artItem.objectURL}
+        country={artItem.country}
+        culture={artItem.culture}
+      />
     ));
   }
 
   return (
-    <main>
-      <h1 className={styles.hey}>Art App</h1>
-      {artItems}
-    </main>
+    <div>
+      <h1 className={styles.appHeader}>Art App</h1>
+      <h2 className={styles.departmentHeader}>{departmentName}</h2>
+      <div className={styles.artItemsContainer}>{artItems}</div>
+    </div>
   );
 }
