@@ -1,6 +1,12 @@
-"use client";
+// "use client";
 
-import { useEffect } from "react";
+import {
+  JSXElementConstructor,
+  PromiseLikeOfReactNode,
+  ReactElement,
+  ReactNode,
+  useEffect,
+} from "react";
 import styles from "./page.module.css";
 
 function getRandomSample<T>(arr: T[], count: number): T[] {
@@ -44,8 +50,6 @@ async function getArtData(departmentId: string, count: number) {
       })
     );
 
-    console.log(objects);
-
     return objects;
   } catch (err) {
     console.error("Failed to fetch art data:", err);
@@ -53,14 +57,27 @@ async function getArtData(departmentId: string, count: number) {
   }
 }
 
-export default function Demos() {
-  useEffect(() => {
-    getArtData("3", 10);
-  }, []);
+function ArtItem(props: any) {
+  return (
+    <div className="artItem">
+      {props.name} {props.artistName} {props.image}
+    </div>
+  );
+}
+
+export default async function ArtApp() {
+  const artData = await getArtData("1", 2);
+  var artItems: any | null = [];
+  if (artData) {
+    artItems = artData.map((artItem) => (
+      <ArtItem key={artItem.objectID} name={artItem.title} artistName={artItem.artistDisplayName} image = {artItem.primaryImage} />
+    ));
+  }
 
   return (
     <main>
-      <h1 className={styles.hey}>Hey</h1>
+      <h1 className={styles.hey}>Art App</h1>
+      {artItems}
     </main>
   );
 }
