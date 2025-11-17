@@ -4,6 +4,11 @@ import imgBlock1Left from "./images/img-block1-left.png";
 import imgBlock1Right from "./images/img-block1-right.png";
 import imgBlock2Left from "./images/img-block2-left.png";
 import imgBlock2Right from "./images/img-block2-right.png";
+import reviewLine from "./images/review-line.png";
+import reviewPic1 from "./images/review-pic-1.png";
+import reviewPic2 from "./images/review-pic-2.png";
+import reviewPic3 from "./images/review-pic-3.png";
+import reviewStar from "./images/review-star.png";
 
 export default function Design() {
   return (
@@ -56,7 +61,6 @@ export default function Design() {
               <Image src={imgBlock2Left} alt="..." />
             </div>
           </div>
-          {/* <div className={styles["image-block"]}></div> */}
         </div>
         <div className={styles["description-section"]}>
           <h2 className={styles["description-subheader"]}>רקע</h2>
@@ -79,8 +83,41 @@ export default function Design() {
           </p>
         </div>
 
-        <div className={styles["description-section"]}>
+        <div
+          className={styles["description-section"]}
+          id={styles["review-section"]}
+        >
           <h2 className={styles["description-subheader"]}>לקוחות מספרים</h2>
+          <div className={styles["review"]}>
+            <p className={styles["review-top-paragraph"]}>
+              “האפליקציה הזו פשוט גאונית! תמיד רציתי להתחיל לאסוף צמחים, אבל לא
+              ידעתי מאיפה להתחיל. דרך האפליקציה מצאתי אנשים באיזור שלי שממש שמחו
+              לשתף ייחורים, והכול היה קליל — העליתי תמונה, קיבלתי מאצ׳ תוך יום,
+              וקיבלתי פוטוס מהמם!”
+            </p>
+            <Image src={reviewLine} alt="..." />
+            <div className={styles["review-bottom-section"]}>
+              <div className={styles["review-author-section"]}>
+                <Image
+                  src={reviewPic1}
+                  alt="..."
+                  className={styles["review-image"]}
+                />
+                <p className={styles["review-author-details"]}>
+                  אריאל
+                  <br />
+                  רחביה, ירושלים
+                </p>
+              </div>
+              <div className={styles["review-rating"]}>
+                <Image src={reviewStar} alt="..." />
+                <Image src={reviewStar} alt="..." />
+                <Image src={reviewStar} alt="..." />
+                <Image src={reviewStar} alt="..." />
+                <Image src={reviewStar} alt="..." />
+              </div>
+            </div>
+          </div>
         </div>
         <div id={styles["design-footer"]}>מַשְרִישִים</div>
       </div>
