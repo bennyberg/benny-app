@@ -1,0 +1,89 @@
+.hey {
+  font-size: 3rem;
+}
+
+#mashrishim-app {
+  --header-bg-color: #426c3e;
+  --main-bg-color: #eeffd4;
+  --header-text-main-color: #f4f0f0;
+  --header-text-second-color: #bacc5c;
+  --header-text-third-color: #eeffd4;
+  --description-text-main-color: #426c3e;
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-content: center; */
+  max-width: 60rem;
+  /* padding: 2rem; */
+  margin: 0 auto;
+}
+
+#header-section {
+  background-color: var(--header-bg-color);
+  display: flex;
+  padding: 1rem;
+  /* margin:0 auto; */
+}
+
+#intro-header {
+  color: var(--header-text-main-color);
+  font-family: Museum AAA;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 50px;
+  text-box-trim: none;
+  line-height: 100%;
+  letter-spacing: -2%;
+  text-align: right;
+}
+
+.second-color-text {
+  color: var(--header-text-second-color);
+}
+.third-color-text {
+  color: var(--header-text-third-color);
+}
+
+.description-section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-bg-color);
+  padding: 1rem;
+}
+
+.description-subheader {
+  font-family: Museum AAA;
+  font-weight: 900;
+  font-style: Black;
+  font-size: 20px;
+  text-box-trim: none;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color:var(--description-text-main-color)
+}
+
+.description-paragraph {
+  font-family: NarkisBlockStudio;
+  font-weight: 400;
+  font-style: Medium;
+  font-size: 20px;
+  /* leading-trim: NONE; */
+  line-height: 125%;
+  letter-spacing: 0%;
+  text-align: right;
+  color: var(--description-text-main-color);
+}
+
+.description-paragraph-bold {
+  font-weight: 500;
+  font-style: Regular;
+}
+
+#design-footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: var(--header-bg-color);
+}

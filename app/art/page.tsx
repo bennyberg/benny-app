@@ -109,6 +109,8 @@ function ArtItem(props: any) {
 }
 
 export default async function ArtApp() {
+  
+
   const artData = await getArtData("5", 10);
   let artItems: any | null = [];
   let departmentName = "";
