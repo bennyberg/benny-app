@@ -9,7 +9,6 @@
   --header-text-second-color: #bacc5c;
   --header-text-third-color: #eeffd4;
   --description-text-main-color: #426c3e;
-
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -28,7 +27,7 @@
 
 #intro-header {
   color: var(--header-text-main-color);
-  font-family: Museum AAA;
+  /* font-family: Museum AAA; */
   font-weight: 700;
   font-style: Bold;
   font-size: 50px;
@@ -50,35 +49,76 @@
   flex-direction: column;
   background-color: var(--main-bg-color);
   padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .description-subheader {
-  font-family: Museum AAA;
+  /* font-family: Museum AAA; */
   font-weight: 900;
-  font-style: Black;
-  font-size: 20px;
+  font-style: normal;
+  font-size: 28px;
   text-box-trim: none;
   line-height: 100%;
   letter-spacing: 0%;
   text-align: center;
-  color:var(--description-text-main-color)
+  color: var(--description-text-main-color);
 }
 
 .description-paragraph {
-  font-family: NarkisBlockStudio;
-  font-weight: 400;
-  font-style: Medium;
+  /* font-family: NarkisBlockStudio; */
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-style: normal;
   font-size: 20px;
-  /* leading-trim: NONE; */
+  text-box-trim: none;
   line-height: 125%;
   letter-spacing: 0%;
   text-align: right;
   color: var(--description-text-main-color);
 }
 
+#image-description-paragraph {
+  gap: 1rem;
+}
+
 .description-paragraph-bold {
-  font-weight: 500;
-  font-style: Regular;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 382px;
+  height: 249px;
+  /* top: 714px; */
+  /* left: -0.88px; */
+  /* angle: 0 deg; */
+  /* opacity: 1; */
+  background-color: var(--header-bg-color);
+}
+
+#image-container-1 {
+  align-self: start;
+}
+
+#image-container-2 {
+  align-self: end;
+}
+
+.image-block {
+  display: flex;
+  /* align-content: center; */
+}
+
+#image-block-1 {
+  justify-content: left;
+}
+#image-block-2 {
+  justify-content: right;
 }
 
 #design-footer {
@@ -86,4 +126,15 @@
   justify-content: center;
   align-content: center;
   background-color: var(--header-bg-color);
+  color: var(--header-text-third-color);
+  /* font-family: Museum AAA; */
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  text-box-trim: none;
+  line-height: 101%;
+  letter-spacing: -2%;
+  text-align: center;
+  padding: 1rem;
+  padding-bottom: 2rem;
 }

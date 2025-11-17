@@ -1,4 +1,9 @@
 import styles from "./page.module.css";
+import Image from "next/image";
+import imgBlock1Left from "./images/img-block1-left.png";
+import imgBlock1Right from "./images/img-block1-right.png";
+import imgBlock2Left from "./images/img-block2-left.png";
+import imgBlock2Right from "./images/img-block2-right.png";
 
 export default function Design() {
   return (
@@ -27,9 +32,31 @@ export default function Design() {
             מדד של אמינות המשתמש, רצינותו, טיב הצמחים אותם מעביר הלאה וכו׳.
           </p>
         </div>
-        <div className={styles["description-section"]}>
+        <div
+          className={styles["description-section"]}
+          id={styles["image-description-paragraph"]}
+        >
           {" "}
           <h2 className={styles["description-subheader"]}>תמונות מהאפליקציה</h2>
+          <div
+            className={styles["image-container"]}
+            id={styles["image-container-1"]}
+          >
+            <div className={styles["image-block"]} id={styles["image-block-1"]}>
+              <Image src={imgBlock1Right} alt="..." />
+              <Image src={imgBlock1Left} alt="..." />
+            </div>
+          </div>
+          <div
+            className={styles["image-container"]}
+            id={styles["image-container-2"]}
+          >
+            <div className={styles["image-block"]} id={styles["image-block-2"]}>
+              <Image src={imgBlock2Right} alt="..." />
+              <Image src={imgBlock2Left} alt="..." />
+            </div>
+          </div>
+          {/* <div className={styles["image-block"]}></div> */}
         </div>
         <div className={styles["description-section"]}>
           <h2 className={styles["description-subheader"]}>רקע</h2>
