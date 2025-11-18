@@ -29,6 +29,7 @@ export default function Design() {
             <span className={styles["description-paragraph-bold"]}>
               האפליקציה מחברת בין חובבי צמחים לצורך החלפה של ייחורים וצמחים
             </span>
+          
             , בצורה קלה מתמיד. כל משתמש באפליקציה יוצר פרופיל אישי, מעלה תמונות
             של הצמחים אותם רוצה להחליף מסתכל על אילו צמחים קיימים לאחרים,
             וכשמתעניין בייחור, נוצר מאצ' והצדדים יכולים לתאם מועד החלפה. לכל צמח
@@ -48,8 +49,8 @@ export default function Design() {
             id={styles["image-container-1"]}
           >
             <div className={styles["image-block"]} id={styles["image-block-1"]}>
-              <Image src={imgBlock1Right} alt="..." />
-              <Image src={imgBlock1Left} alt="..." />
+              <Image src={imgBlock1Right} alt="..." id={styles["image-block-1-right-img"]} />
+              <Image src={imgBlock1Left} alt="..."  />
             </div>
           </div>
           <div
@@ -103,11 +104,85 @@ export default function Design() {
                   alt="..."
                   className={styles["review-image"]}
                 />
-                <p className={styles["review-author-details"]}>
-                  אריאל
-                  <br />
-                  רחביה, ירושלים
-                </p>
+                <div className={styles["review-author-details"]}>
+                  <p className={styles["review-author-details-paragraph-bold"]}>
+                    אריאל
+                  </p>
+                  <p
+                    className={
+                      styles["review-author-details-paragraph-regular"]
+                    }
+                  >
+                    רחביה, ירושלים
+                  </p>
+                </div>
+              </div>
+              <div className={styles["review-rating"]}>
+                <Image src={reviewStar} alt="..." />
+                <Image src={reviewStar} alt="..." />
+                <Image src={reviewStar} alt="..." />
+                <Image src={reviewStar} alt="..." />
+                <Image src={reviewStar} alt="..." />
+              </div>
+            </div>
+          </div>
+          <div className={styles["review"]}>
+            <p className={styles["review-top-paragraph"]}>
+              “החלפתי ייחור ומצאתי את בעלי”{" "}
+            </p>
+            <Image src={reviewLine} alt="..." />
+            <div className={styles["review-bottom-section"]}>
+              <div className={styles["review-author-section"]}>
+                <Image
+                  src={reviewPic2}
+                  alt="..."
+                  className={styles["review-image"]}
+                />
+                <div className={styles["review-author-details"]}>
+                  <p className={styles["review-author-details-paragraph-bold"]}>
+                    דור
+                  </p>
+                  <p
+                    className={
+                      styles["review-author-details-paragraph-regular"]
+                    }
+                  >
+                    רחביה, ירושלים
+                  </p>
+                </div>
+              </div>
+              <div className={styles["review-rating"]}>
+                <Image src={reviewStar} alt="..." />
+                <Image src={reviewStar} alt="..." />
+                <Image src={reviewStar} alt="..." />
+                <Image src={reviewStar} alt="..." />
+              </div>
+            </div>
+          </div>
+          <div className={styles["review"]}>
+            <p className={styles["review-top-paragraph"]}>
+              “סוף סוף אפליקציה שעושה סדר בעולם של החלפות צמחים!”{" "}
+            </p>
+            <Image src={reviewLine} alt="..." />
+            <div className={styles["review-bottom-section"]}>
+              <div className={styles["review-author-section"]}>
+                <Image
+                  src={reviewPic3}
+                  alt="..."
+                  className={styles["review-image"]}
+                />
+                <div className={styles["review-author-details"]}>
+                  <p className={styles["review-author-details-paragraph-bold"]}>
+                    נעם
+                  </p>
+                  <p
+                    className={
+                      styles["review-author-details-paragraph-regular"]
+                    }
+                  >
+                    פלורנטין, תל אביב
+                  </p>
+                </div>
               </div>
               <div className={styles["review-rating"]}>
                 <Image src={reviewStar} alt="..." />
@@ -119,6 +194,7 @@ export default function Design() {
             </div>
           </div>
         </div>
+
         <div id={styles["design-footer"]}>מַשְרִישִים</div>
       </div>
     </>
