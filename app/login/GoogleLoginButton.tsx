@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { NEXT_PUBLIC_GOOGLE_CLIENT_ID } from "@/lib/config";
